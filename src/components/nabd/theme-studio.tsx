@@ -1,9 +1,12 @@
 import { Sun, Moon, Contrast, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useConsolePreferences } from '@/lib/console-preferences';
+import { useFeatureFlags } from '@/lib/use-feature-flags';
 
 export function ThemeStudio() {
   const { preferences: p, updatePreferences: update } = useConsolePreferences();
+  const { enabled } = useFeatureFlags();
+  if (!enabled('F145')) return null;
   return <section className="mb-6 border-b border-border pb-6" aria-labelledby="theme-heading">
     <div className="flex items-center justify-between mb-5"><h2 id="theme-heading" className="text-lg">Console appearance</h2><span className="eyebrow">F145</span></div>
     <div className="grid md:grid-cols-2 gap-6">
