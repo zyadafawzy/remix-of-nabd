@@ -10,33 +10,232 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppIndexRouteImport } from './routes/app.index'
+import { Route as AppAlertsRouteImport } from './routes/app.alerts'
+import { Route as AppCheckInRouteImport } from './routes/app.check-in'
+import { Route as AppConsoleRouteImport } from './routes/app.console'
+import { Route as AppLearnRouteImport } from './routes/app.learn'
+import { Route as AppMedicRouteImport } from './routes/app.medic'
+import { Route as AppMindRouteImport } from './routes/app.mind'
+import { Route as AppMissionsRouteImport } from './routes/app.missions'
+import { Route as AppNutritionRouteImport } from './routes/app.nutrition'
+import { Route as AppReportRouteImport } from './routes/app.report'
+import { Route as AppScenariosRouteImport } from './routes/app.scenarios'
+import { Route as AppSettingsRouteImport } from './routes/app.settings'
+import { Route as AppSourcesRouteImport } from './routes/app.sources'
+import { Route as AppTrainingRouteImport } from './routes/app.training'
+import { Route as AppTrendsRouteImport } from './routes/app.trends'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppIndexRoute = AppIndexRouteImport.update({
+  id: '/app/',
+  path: '/app/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppAlertsRoute = AppAlertsRouteImport.update({
+  id: '/app/alerts',
+  path: '/app/alerts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppCheckInRoute = AppCheckInRouteImport.update({
+  id: '/app/check-in',
+  path: '/app/check-in',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppConsoleRoute = AppConsoleRouteImport.update({
+  id: '/app/console',
+  path: '/app/console',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppLearnRoute = AppLearnRouteImport.update({
+  id: '/app/learn',
+  path: '/app/learn',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppMedicRoute = AppMedicRouteImport.update({
+  id: '/app/medic',
+  path: '/app/medic',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppMindRoute = AppMindRouteImport.update({
+  id: '/app/mind',
+  path: '/app/mind',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppMissionsRoute = AppMissionsRouteImport.update({
+  id: '/app/missions',
+  path: '/app/missions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppNutritionRoute = AppNutritionRouteImport.update({
+  id: '/app/nutrition',
+  path: '/app/nutrition',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppReportRoute = AppReportRouteImport.update({
+  id: '/app/report',
+  path: '/app/report',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppScenariosRoute = AppScenariosRouteImport.update({
+  id: '/app/scenarios',
+  path: '/app/scenarios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppSettingsRoute = AppSettingsRouteImport.update({
+  id: '/app/settings',
+  path: '/app/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppSourcesRoute = AppSourcesRouteImport.update({
+  id: '/app/sources',
+  path: '/app/sources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppTrainingRoute = AppTrainingRouteImport.update({
+  id: '/app/training',
+  path: '/app/training',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppTrendsRoute = AppTrendsRouteImport.update({
+  id: '/app/trends',
+  path: '/app/trends',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/app/alerts': typeof AppAlertsRoute
+  '/app/check-in': typeof AppCheckInRoute
+  '/app/console': typeof AppConsoleRoute
+  '/app/learn': typeof AppLearnRoute
+  '/app/medic': typeof AppMedicRoute
+  '/app/mind': typeof AppMindRoute
+  '/app/missions': typeof AppMissionsRoute
+  '/app/nutrition': typeof AppNutritionRoute
+  '/app/report': typeof AppReportRoute
+  '/app/scenarios': typeof AppScenariosRoute
+  '/app/settings': typeof AppSettingsRoute
+  '/app/sources': typeof AppSourcesRoute
+  '/app/training': typeof AppTrainingRoute
+  '/app/trends': typeof AppTrendsRoute
+  '/app/': typeof AppIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/app/alerts': typeof AppAlertsRoute
+  '/app/check-in': typeof AppCheckInRoute
+  '/app/console': typeof AppConsoleRoute
+  '/app/learn': typeof AppLearnRoute
+  '/app/medic': typeof AppMedicRoute
+  '/app/mind': typeof AppMindRoute
+  '/app/missions': typeof AppMissionsRoute
+  '/app/nutrition': typeof AppNutritionRoute
+  '/app/report': typeof AppReportRoute
+  '/app/scenarios': typeof AppScenariosRoute
+  '/app/settings': typeof AppSettingsRoute
+  '/app/sources': typeof AppSourcesRoute
+  '/app/training': typeof AppTrainingRoute
+  '/app/trends': typeof AppTrendsRoute
+  '/app': typeof AppIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/app/alerts': typeof AppAlertsRoute
+  '/app/check-in': typeof AppCheckInRoute
+  '/app/console': typeof AppConsoleRoute
+  '/app/learn': typeof AppLearnRoute
+  '/app/medic': typeof AppMedicRoute
+  '/app/mind': typeof AppMindRoute
+  '/app/missions': typeof AppMissionsRoute
+  '/app/nutrition': typeof AppNutritionRoute
+  '/app/report': typeof AppReportRoute
+  '/app/scenarios': typeof AppScenariosRoute
+  '/app/settings': typeof AppSettingsRoute
+  '/app/sources': typeof AppSourcesRoute
+  '/app/training': typeof AppTrainingRoute
+  '/app/trends': typeof AppTrendsRoute
+  '/app/': typeof AppIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/app/alerts'
+    | '/app/check-in'
+    | '/app/console'
+    | '/app/learn'
+    | '/app/medic'
+    | '/app/mind'
+    | '/app/missions'
+    | '/app/nutrition'
+    | '/app/report'
+    | '/app/scenarios'
+    | '/app/settings'
+    | '/app/sources'
+    | '/app/training'
+    | '/app/trends'
+    | '/app/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/app/alerts'
+    | '/app/check-in'
+    | '/app/console'
+    | '/app/learn'
+    | '/app/medic'
+    | '/app/mind'
+    | '/app/missions'
+    | '/app/nutrition'
+    | '/app/report'
+    | '/app/scenarios'
+    | '/app/settings'
+    | '/app/sources'
+    | '/app/training'
+    | '/app/trends'
+    | '/app'
+  id:
+    | '__root__'
+    | '/'
+    | '/app/alerts'
+    | '/app/check-in'
+    | '/app/console'
+    | '/app/learn'
+    | '/app/medic'
+    | '/app/mind'
+    | '/app/missions'
+    | '/app/nutrition'
+    | '/app/report'
+    | '/app/scenarios'
+    | '/app/settings'
+    | '/app/sources'
+    | '/app/training'
+    | '/app/trends'
+    | '/app/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AppAlertsRoute: typeof AppAlertsRoute
+  AppCheckInRoute: typeof AppCheckInRoute
+  AppConsoleRoute: typeof AppConsoleRoute
+  AppLearnRoute: typeof AppLearnRoute
+  AppMedicRoute: typeof AppMedicRoute
+  AppMindRoute: typeof AppMindRoute
+  AppMissionsRoute: typeof AppMissionsRoute
+  AppNutritionRoute: typeof AppNutritionRoute
+  AppReportRoute: typeof AppReportRoute
+  AppScenariosRoute: typeof AppScenariosRoute
+  AppSettingsRoute: typeof AppSettingsRoute
+  AppSourcesRoute: typeof AppSourcesRoute
+  AppTrainingRoute: typeof AppTrainingRoute
+  AppTrendsRoute: typeof AppTrendsRoute
+  AppIndexRoute: typeof AppIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +247,131 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/': {
+      id: '/app/'
+      path: '/app'
+      fullPath: '/app/'
+      preLoaderRoute: typeof AppIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/alerts': {
+      id: '/app/alerts'
+      path: '/app/alerts'
+      fullPath: '/app/alerts'
+      preLoaderRoute: typeof AppAlertsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/check-in': {
+      id: '/app/check-in'
+      path: '/app/check-in'
+      fullPath: '/app/check-in'
+      preLoaderRoute: typeof AppCheckInRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/console': {
+      id: '/app/console'
+      path: '/app/console'
+      fullPath: '/app/console'
+      preLoaderRoute: typeof AppConsoleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/learn': {
+      id: '/app/learn'
+      path: '/app/learn'
+      fullPath: '/app/learn'
+      preLoaderRoute: typeof AppLearnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/medic': {
+      id: '/app/medic'
+      path: '/app/medic'
+      fullPath: '/app/medic'
+      preLoaderRoute: typeof AppMedicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/mind': {
+      id: '/app/mind'
+      path: '/app/mind'
+      fullPath: '/app/mind'
+      preLoaderRoute: typeof AppMindRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/missions': {
+      id: '/app/missions'
+      path: '/app/missions'
+      fullPath: '/app/missions'
+      preLoaderRoute: typeof AppMissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/nutrition': {
+      id: '/app/nutrition'
+      path: '/app/nutrition'
+      fullPath: '/app/nutrition'
+      preLoaderRoute: typeof AppNutritionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/report': {
+      id: '/app/report'
+      path: '/app/report'
+      fullPath: '/app/report'
+      preLoaderRoute: typeof AppReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/scenarios': {
+      id: '/app/scenarios'
+      path: '/app/scenarios'
+      fullPath: '/app/scenarios'
+      preLoaderRoute: typeof AppScenariosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/settings': {
+      id: '/app/settings'
+      path: '/app/settings'
+      fullPath: '/app/settings'
+      preLoaderRoute: typeof AppSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/sources': {
+      id: '/app/sources'
+      path: '/app/sources'
+      fullPath: '/app/sources'
+      preLoaderRoute: typeof AppSourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/training': {
+      id: '/app/training'
+      path: '/app/training'
+      fullPath: '/app/training'
+      preLoaderRoute: typeof AppTrainingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/trends': {
+      id: '/app/trends'
+      path: '/app/trends'
+      fullPath: '/app/trends'
+      preLoaderRoute: typeof AppTrendsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AppAlertsRoute: AppAlertsRoute,
+  AppCheckInRoute: AppCheckInRoute,
+  AppConsoleRoute: AppConsoleRoute,
+  AppLearnRoute: AppLearnRoute,
+  AppMedicRoute: AppMedicRoute,
+  AppMindRoute: AppMindRoute,
+  AppMissionsRoute: AppMissionsRoute,
+  AppNutritionRoute: AppNutritionRoute,
+  AppReportRoute: AppReportRoute,
+  AppScenariosRoute: AppScenariosRoute,
+  AppSettingsRoute: AppSettingsRoute,
+  AppSourcesRoute: AppSourcesRoute,
+  AppTrainingRoute: AppTrainingRoute,
+  AppTrendsRoute: AppTrendsRoute,
+  AppIndexRoute: AppIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
