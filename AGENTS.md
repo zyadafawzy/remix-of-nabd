@@ -40,4 +40,6 @@ use the editor.
 - Track all specification IDs in the browser-safe feature registry; flags describe availability, not authorization, and must never grant access to private data.
 - Only wired feature controls expose demo availability toggles; validate browser overrides against registry IDs and never label unwired features complete.
 - Reuse the browser-safe table query and CSV utilities for data tables; protect spreadsheet exports from formula execution and export the visible filtered view.
+- Public content uses separate typed leaf routes and a shared editorial shell; preserve the operational console at /app and embed the same dashboard rather than duplicating demo state.
+- Public release and status pages distinguish planned work and simulated health from measured production claims; contact downloads remain local until an actual delivery destination is supplied.
 - Mission status clocks are explicitly illustrative and advance from a per-mounted-shell start; do not present their synthetic epoch as a real launch date.
