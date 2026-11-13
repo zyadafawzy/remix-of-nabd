@@ -1,0 +1,6 @@
+export type MissionMode = 'station' | 'mars' | 'moon';
+export const missionModes = {
+  station: { name: 'Space Station', short: 'LOW EARTH ORBIT', gravity: 'Microgravity', delay: 2, radiation: .45, budget: 100, description: 'A closed habitat, 400 km above Earth. Fluid shifts, air quality, and daily countermeasures shape crew health.', weights: [3, 2, 1, 5, 4] },
+  mars: { name: 'Mars Transit', short: 'DEEP SPACE TRANSIT', gravity: 'Microgravity', delay: 720, radiation: 1.8, budget: 600, description: 'Months from home, with a 12-minute one-way communication delay. Radiation and autonomy become critical.', weights: [5, 5, 5, 5, 3] },
+  moon: { name: 'Lunar Base', short: 'LUNAR SURFACE', gravity: '1/6 g', delay: 1.3, radiation: 1.3, budget: 300, description: 'Partial gravity, surface radiation, and abrasive lunar dust require adapted exercise and eye protection.', weights: [4, 3, 2, 4, 4] },
+} satisfies Record<MissionMode, { name: string; short: string; gravity: string; delay: number; radiation: number; budget: number; description: string; weights: number[] }>;
