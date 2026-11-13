@@ -1,5 +1,7 @@
 import { hazards } from './hazards';
+import { evidence } from './evidence';
 export const sources = [
+ ...evidence.map(e=>({name:e.title,url:e.url,description:`${e.claim} ${e.limit}`})),
  {name:'NASA · Five Hazards of Human Spaceflight',url:'https://www.nasa.gov/hrp/hazards/',description:'The environmental framework behind NABD: radiation, isolation, distance, gravity, and closed habitats.'},
  {name:'NASA · Risks of Human Spaceflight',url:'https://www.nasa.gov/hrp/risks/',description:'Human Research Program evidence and risks, from physiological adaptation to behavioral health.'},
  {name:'NASA · Ongoing HRP Research in Space',url:'https://www.nasa.gov/hrp/ongoing-hrp-research/',description:'Research investigating how the human body adapts and how countermeasures can protect crew.'},
