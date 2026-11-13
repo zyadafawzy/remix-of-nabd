@@ -1,4 +1,5 @@
 # NABD implementation roadmap
+- [ ] Resolve reported src/pages/Index.tsx number-to-string error; blocked on the failing call and receiving function declaration because that page is absent from this project.
 - [ ] Resolve reported src/App.tsx button typing error; blocked on the actual failing file and full diagnostic because this project has no src/App.tsx.
 - [x] Fix and verify mission context identity across live-preview updates; module-reload regression passes and crew/mode survive navigation and reload.
 - [x] Core mission shell, dashboard, SVG body drawer, six crew and three mode selections.
