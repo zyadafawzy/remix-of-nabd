@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Application architecture
+- Keep TanStack file routing and shared mission state in a context provider; this preserves the template's SSR and typed navigation.
+- Keep health evaluation in pure browser-safe functions, separate from presentation and AI; safety explanations remain available offline and testable.
+- Cloud tables contain public synthetic demonstration data only; never enter real biometric or confidential data under public demo policies.
+- Use TanStack server functions for AI, never new Edge Functions, so credentials stay server-side.
+- Register the generated PWA worker through one guarded module only; editor previews must never be controlled by a service worker.
