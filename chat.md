@@ -21,6 +21,7 @@
 - Current state: Lovable Cloud connected; core NABD demonstration built with 16 content pages. The first screen is the usable health overview rather than a cinematic landing page.
 
 ## Requested changes
+- 2026-11-13: User reported TS2322 at src/lib/utils.ts(2,20): number not assignable to string. New_Text_Document-3.txt repeats the design brief twice, with no utility source. Current utility line 2 is the tailwind-merge import, not a numeric assignment; direct execution confirms cn(42) returns the string "42" and conflicting classes merge to "p-4". No matching build diagnostic is available. Application code remains unchanged; the actual failing utility source is required to determine a safe fix.
 - 2026-11-13: User reported TS2345 at src/pages/Index.tsx(19,17): a number passed to a string parameter. New_Text_Document-2.txt repeats the UI overhaul brief and contains no failing source. The current project has src/routes/index.tsx and src/routes/app.index.tsx, but no src/pages/Index.tsx; available build telemetry contains no matching diagnostic. No application code changed. Request the failing call and receiving function declaration before deciding whether text conversion or a numeric parameter is correct.
 - 2026-11-13: User reported TS2322 at src/App.tsx(10,11), claiming `() => void` is incompatible with `MouseEventHandler<HTMLButtonElement>`. Uploaded New_Text_Document.txt is a visual-only UI overhaul brief, not the failing App.tsx source; the error investigation does not authorize applying that broader overhaul.
 - 2026-11-13: User reported TS2322 (`string | null` not assignable to `string`) at src/lib/utils.ts(2,21).
@@ -57,6 +58,7 @@
 | New_Text_Document_7.txt | Full NABD specification: mission dashboard, health rules, check-in, trends, training, mental health, nutrition, educational library, delayed messaging, AI assistance, scenarios, rewards, reports, PWA and demo tour. |
 | New_Text_Document.txt | Visual-only product UI/UX overhaul brief; contains no App.tsx code or reported handler. Reviewed, not implemented during this error investigation. |
 | New_Text_Document-2.txt | Repeated visual-only overhaul brief; contains no Index.tsx source or number-to-string call. Reviewed, not implemented during this error investigation. |
+| New_Text_Document-3.txt | Duplicated visual-only overhaul brief; contains no utility source or numeric assignment. Reviewed, not implemented during this error investigation. |
 
 ## Next step
 - Continue completing the outstanding full-spec features in roadmap.md; do not describe this core version as all eight phases complete.
