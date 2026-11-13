@@ -17,11 +17,11 @@ export function parsePreferences(value: unknown): ConsolePreferences {
   if (!value || typeof value !== 'object') return { ...defaultPreferences };
   const p = value as Record<string, unknown>;
   return {
-    theme: p.theme === 'daylight' || p.theme === 'contrast' ? p.theme : 'dark',
-    accent: p.accent === 'green' || p.accent === 'blue' ? p.accent : 'cyan',
-    density: p.density === 'compact' ? 'compact' : 'comfortable',
-    textSize: p.textSize === 'large' ? 'large' : 'standard',
-    reducedMotion: p.reducedMotion === true, collapsed: p.collapsed === true, quiet: p.quiet === true,
+    theme: p['theme'] === 'daylight' || p['theme'] === 'contrast' ? p['theme'] : 'dark',
+    accent: p['accent'] === 'green' || p['accent'] === 'blue' ? p['accent'] : 'cyan',
+    density: p['density'] === 'compact' ? 'compact' : 'comfortable',
+    textSize: p['textSize'] === 'large' ? 'large' : 'standard',
+    reducedMotion: p['reducedMotion'] === true, collapsed: p['collapsed'] === true, quiet: p['quiet'] === true,
   };
 }
 function readPreferences() {
@@ -30,10 +30,10 @@ function readPreferences() {
 }
 function applyPreferences(p: ConsolePreferences) {
   const root = document.documentElement;
-  root.dataset.theme = p.theme;
-  root.dataset.accent = p.accent;
-  root.dataset.density = p.density;
-  root.dataset.textSize = p.textSize;
+  root.dataset['theme'] = p.theme;
+  root.dataset['accent'] = p.accent;
+  root.dataset['density'] = p.density;
+  root.dataset['textSize'] = p.textSize;
   root.classList.toggle('reduce-motion', p.reducedMotion);
   root.classList.toggle('dark', p.theme !== 'daylight');
 }
