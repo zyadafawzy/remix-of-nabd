@@ -10,6 +10,19 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ChangelogRouteImport } from './routes/changelog'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DocsRouteImport } from './routes/docs'
+import { Route as EarthImpactRouteImport } from './routes/earth-impact'
+import { Route as JudgesRouteImport } from './routes/judges'
+import { Route as MissionModesRouteImport } from './routes/mission-modes'
+import { Route as PressRouteImport } from './routes/press'
+import { Route as ProductRouteImport } from './routes/product'
+import { Route as SafetyAndEthicsRouteImport } from './routes/safety-and-ethics'
+import { Route as ScienceRouteImport } from './routes/science'
+import { Route as StatusRouteImport } from './routes/status'
+import { Route as TeamRouteImport } from './routes/team'
 import { Route as AppIndexRouteImport } from './routes/app.index'
 import { Route as AppAlertsRouteImport } from './routes/app.alerts'
 import { Route as AppCheckInRouteImport } from './routes/app.check-in'
@@ -29,6 +42,71 @@ import { Route as AppTrendsRouteImport } from './routes/app.trends'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChangelogRoute = ChangelogRouteImport.update({
+  id: '/changelog',
+  path: '/changelog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsRoute = DocsRouteImport.update({
+  id: '/docs',
+  path: '/docs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EarthImpactRoute = EarthImpactRouteImport.update({
+  id: '/earth-impact',
+  path: '/earth-impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JudgesRoute = JudgesRouteImport.update({
+  id: '/judges',
+  path: '/judges',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MissionModesRoute = MissionModesRouteImport.update({
+  id: '/mission-modes',
+  path: '/mission-modes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PressRoute = PressRouteImport.update({
+  id: '/press',
+  path: '/press',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductRoute = ProductRouteImport.update({
+  id: '/product',
+  path: '/product',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafetyAndEthicsRoute = SafetyAndEthicsRouteImport.update({
+  id: '/safety-and-ethics',
+  path: '/safety-and-ethics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScienceRoute = ScienceRouteImport.update({
+  id: '/science',
+  path: '/science',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StatusRoute = StatusRouteImport.update({
+  id: '/status',
+  path: '/status',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AppIndexRoute = AppIndexRouteImport.update({
@@ -109,6 +187,19 @@ const AppTrendsRoute = AppTrendsRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/changelog': typeof ChangelogRoute
+  '/contact': typeof ContactRoute
+  '/docs': typeof DocsRoute
+  '/earth-impact': typeof EarthImpactRoute
+  '/judges': typeof JudgesRoute
+  '/mission-modes': typeof MissionModesRoute
+  '/press': typeof PressRoute
+  '/product': typeof ProductRoute
+  '/safety-and-ethics': typeof SafetyAndEthicsRoute
+  '/science': typeof ScienceRoute
+  '/status': typeof StatusRoute
+  '/team': typeof TeamRoute
   '/app/alerts': typeof AppAlertsRoute
   '/app/check-in': typeof AppCheckInRoute
   '/app/console': typeof AppConsoleRoute
@@ -127,6 +218,19 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/changelog': typeof ChangelogRoute
+  '/contact': typeof ContactRoute
+  '/docs': typeof DocsRoute
+  '/earth-impact': typeof EarthImpactRoute
+  '/judges': typeof JudgesRoute
+  '/mission-modes': typeof MissionModesRoute
+  '/press': typeof PressRoute
+  '/product': typeof ProductRoute
+  '/safety-and-ethics': typeof SafetyAndEthicsRoute
+  '/science': typeof ScienceRoute
+  '/status': typeof StatusRoute
+  '/team': typeof TeamRoute
   '/app/alerts': typeof AppAlertsRoute
   '/app/check-in': typeof AppCheckInRoute
   '/app/console': typeof AppConsoleRoute
@@ -146,6 +250,19 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/changelog': typeof ChangelogRoute
+  '/contact': typeof ContactRoute
+  '/docs': typeof DocsRoute
+  '/earth-impact': typeof EarthImpactRoute
+  '/judges': typeof JudgesRoute
+  '/mission-modes': typeof MissionModesRoute
+  '/press': typeof PressRoute
+  '/product': typeof ProductRoute
+  '/safety-and-ethics': typeof SafetyAndEthicsRoute
+  '/science': typeof ScienceRoute
+  '/status': typeof StatusRoute
+  '/team': typeof TeamRoute
   '/app/alerts': typeof AppAlertsRoute
   '/app/check-in': typeof AppCheckInRoute
   '/app/console': typeof AppConsoleRoute
@@ -166,6 +283,19 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
+    | '/changelog'
+    | '/contact'
+    | '/docs'
+    | '/earth-impact'
+    | '/judges'
+    | '/mission-modes'
+    | '/press'
+    | '/product'
+    | '/safety-and-ethics'
+    | '/science'
+    | '/status'
+    | '/team'
     | '/app/alerts'
     | '/app/check-in'
     | '/app/console'
@@ -184,6 +314,19 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
+    | '/changelog'
+    | '/contact'
+    | '/docs'
+    | '/earth-impact'
+    | '/judges'
+    | '/mission-modes'
+    | '/press'
+    | '/product'
+    | '/safety-and-ethics'
+    | '/science'
+    | '/status'
+    | '/team'
     | '/app/alerts'
     | '/app/check-in'
     | '/app/console'
@@ -202,6 +345,19 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
+    | '/changelog'
+    | '/contact'
+    | '/docs'
+    | '/earth-impact'
+    | '/judges'
+    | '/mission-modes'
+    | '/press'
+    | '/product'
+    | '/safety-and-ethics'
+    | '/science'
+    | '/status'
+    | '/team'
     | '/app/alerts'
     | '/app/check-in'
     | '/app/console'
@@ -221,6 +377,19 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ChangelogRoute: typeof ChangelogRoute
+  ContactRoute: typeof ContactRoute
+  DocsRoute: typeof DocsRoute
+  EarthImpactRoute: typeof EarthImpactRoute
+  JudgesRoute: typeof JudgesRoute
+  MissionModesRoute: typeof MissionModesRoute
+  PressRoute: typeof PressRoute
+  ProductRoute: typeof ProductRoute
+  SafetyAndEthicsRoute: typeof SafetyAndEthicsRoute
+  ScienceRoute: typeof ScienceRoute
+  StatusRoute: typeof StatusRoute
+  TeamRoute: typeof TeamRoute
   AppAlertsRoute: typeof AppAlertsRoute
   AppCheckInRoute: typeof AppCheckInRoute
   AppConsoleRoute: typeof AppConsoleRoute
@@ -245,6 +414,97 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/changelog': {
+      id: '/changelog'
+      path: '/changelog'
+      fullPath: '/changelog'
+      preLoaderRoute: typeof ChangelogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs': {
+      id: '/docs'
+      path: '/docs'
+      fullPath: '/docs'
+      preLoaderRoute: typeof DocsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/earth-impact': {
+      id: '/earth-impact'
+      path: '/earth-impact'
+      fullPath: '/earth-impact'
+      preLoaderRoute: typeof EarthImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/judges': {
+      id: '/judges'
+      path: '/judges'
+      fullPath: '/judges'
+      preLoaderRoute: typeof JudgesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mission-modes': {
+      id: '/mission-modes'
+      path: '/mission-modes'
+      fullPath: '/mission-modes'
+      preLoaderRoute: typeof MissionModesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/press': {
+      id: '/press'
+      path: '/press'
+      fullPath: '/press'
+      preLoaderRoute: typeof PressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/product': {
+      id: '/product'
+      path: '/product'
+      fullPath: '/product'
+      preLoaderRoute: typeof ProductRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safety-and-ethics': {
+      id: '/safety-and-ethics'
+      path: '/safety-and-ethics'
+      fullPath: '/safety-and-ethics'
+      preLoaderRoute: typeof SafetyAndEthicsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/science': {
+      id: '/science'
+      path: '/science'
+      fullPath: '/science'
+      preLoaderRoute: typeof ScienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/status': {
+      id: '/status'
+      path: '/status'
+      fullPath: '/status'
+      preLoaderRoute: typeof StatusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/app/': {
@@ -357,6 +617,19 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ChangelogRoute: ChangelogRoute,
+  ContactRoute: ContactRoute,
+  DocsRoute: DocsRoute,
+  EarthImpactRoute: EarthImpactRoute,
+  JudgesRoute: JudgesRoute,
+  MissionModesRoute: MissionModesRoute,
+  PressRoute: PressRoute,
+  ProductRoute: ProductRoute,
+  SafetyAndEthicsRoute: SafetyAndEthicsRoute,
+  ScienceRoute: ScienceRoute,
+  StatusRoute: StatusRoute,
+  TeamRoute: TeamRoute,
   AppAlertsRoute: AppAlertsRoute,
   AppCheckInRoute: AppCheckInRoute,
   AppConsoleRoute: AppConsoleRoute,

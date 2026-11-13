@@ -1,9 +1,13 @@
 # NABD implementation roadmap
 - [x] Scope resolved: build New_Text_Document-4.txt; latest missing-children error investigation superseded.
+- [ ] Latest attachment message9737.txt requests all waves without stopping; continue the approved specification and verify each delivered feature. Reported src/main.tsx is absent; attachment contains no failing source.
 - [ ] Wave 1: design tokens, themes, shared console shell, status clocks, command palette/shortcuts, basic search/notifications, F001–F150 registry and reusable controls.
   - [x] Foundation checkpoint: grouped collapsible rail, five mobile tabs with working More sheet, emergency guidance, live illustrative MET/UTC/sol, simulation status, F145 appearance settings, F144 search/keyboard commands, basic F141 and F131, and all 150 registry IDs. Verified 1440/1024/768/375px without overflow; 13 tests pass, no browser runtime errors, automatic build OK.
-  - [ ] Finish the full reusable control library and flag-driven availability before declaring Wave 1 complete. Resume here; Waves 2–10 are not implemented.
+  - [x] Added reusable sortable/filterable data table with sticky headers, density, column chooser and filtered CSV; wired persisted local F131/F141/F144/F145 availability switches. Verified switches survive reload and CSV excludes hidden columns; 16 tests pass.
+  - [ ] Finish the remaining reusable control library before declaring Wave 1 complete. Role/permission administration is not implemented by demo flags.
 - [ ] Wave 2: public website, docs, changelog, status, press, judges shell, F129.
+  - [x] Public-page checkpoint: / now hosts the public introduction and live console embed; /app retains the console. Added all 13 sitemap routes, searchable docs, science/safety, mission comparisons, truthful release/status pages, synthetic crew, SVG/fact-sheet downloads, local inquiry download, architecture and searchable 150-ID judges checklist. All 14 public pages render; no runtime errors or overflow in tested desktop/mobile sizes.
+  - [ ] Remaining: interactive hazard strip, scroll-driven walkthrough, full docs/API detail, screenshots in press kit, dated delivered releases and F129 daily science cards. No real contact destination supplied; inquiry downloads locally.
 - [ ] Wave 3: role homes, customizable dashboard, system detail pages, anatomy upgrades (F004, F142, F046–F055).
 - [ ] Wave 4: measurement hub and sensing/logging features (F011–F030, F043).
 - [ ] Wave 5: analytics, forecasts, risk, explanations and model cards (F031–F045).
@@ -27,7 +31,7 @@
 - [x] README.md and chat.md updated with honest completion and limitations.
 
 ## Full-spec work still outstanding
-- Cinematic landing and optional 3D body; current / deliberately opens the usable overview.
+- Optional 3D body and advanced public walkthrough; / is now the approved public site, /app retains the usable overview.
 - Complete rules/scoring, Mifflin-St Jeor estimate, all context-dependent zone mappings and daily trend semantics.
 - Validated rPPG, respiratory estimate, vision analysis, quick check-in, full field validation and reminders.
 - Advanced charts: crew overlays, correlations, PNG exports, event annotations and small multiples.
