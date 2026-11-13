@@ -36,3 +36,6 @@ use the editor.
 - Cloud tables contain public synthetic demonstration data only; never enter real biometric or confidential data under public demo policies.
 - Use TanStack server functions for AI, never new Edge Functions, so credentials stay server-side.
 - Register the generated PWA worker through one guarded module only; editor previews must never be controlled by a service worker.
+- Console appearance preferences are validated and applied after hydration through one shared browser hook; this avoids SSR state leakage and keeps settings synchronized with the shell.
+- Track all specification IDs in the browser-safe feature registry; flags describe availability, not authorization, and must never grant access to private data.
+- Mission status clocks are explicitly illustrative and advance from a per-mounted-shell start; do not present their synthetic epoch as a real launch date.
