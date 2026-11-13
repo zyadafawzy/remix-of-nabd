@@ -1,5 +1,5 @@
 # NABD implementation roadmap
-- [ ] Latest request3420.txt: simulated in-suit sensor/PCB workflow without manual vital entry, interactive 3D body, simpler astronaut controls, shared SVG logo and stronger documentation; verify synthetic capture/save/readback and narrow/mobile layouts. Reported sidebarOpen error names an absent src/main.tsx and symbol; do not claim it fixed.
+- [x] Latest request3420.txt: automatic synthetic in-suit sensor/PCB workflow replaces manual vital entry; interactive 3D scan with SVG fallback/system buttons, shared code-only SVG logo/favicon and stronger README documentation. Verified capture/Cloud insert/reload (66 bpm), mouse rotation, Heart drawer, and narrow/mobile layouts. 19 tests pass, no page errors, automatic build OK. Actual hardware and validated all-metric sensing are not implemented. Reported sidebarOpen error names an absent src/main.tsx and symbol; not reproducible, not claimed fixed.
 - [x] Scope resolved: build New_Text_Document-4.txt; latest missing-children error investigation superseded.
 - [ ] Latest attachment message9737.txt requests all waves without stopping; continue the approved specification and verify each delivered feature. Reported src/main.tsx is absent; attachment contains no failing source.
 - [ ] Wave 1: design tokens, themes, shared console shell, status clocks, command palette/shortcuts, basic search/notifications, F001–F150 registry and reusable controls.
@@ -32,7 +32,7 @@
 - [x] README.md and chat.md updated with honest completion and limitations.
 
 ## Full-spec work still outstanding
-- Optional 3D body and advanced public walkthrough; / is now the approved public site, /app retains the usable overview.
+- Advanced public walkthrough; schematic 3D scan is delivered, /app retains the usable overview.
 - Complete rules/scoring, Mifflin-St Jeor estimate, all context-dependent zone mappings and daily trend semantics.
 - Validated rPPG, respiratory estimate, vision analysis, quick check-in, full field validation and reminders.
 - Advanced charts: crew overlays, correlations, PNG exports, event annotations and small multiples.

@@ -18,12 +18,15 @@ export function CheckIn() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
   const base = useRef(m.reading);
+  const tick = useRef(0);
   useEffect(() => { base.current = m.reading; }, [m.reading]);
   useEffect(() => {
-    let tick = 0;
+    tick.current = 0;
     setPacket(null); setCaptured(null); setSubmitted(false); setSequence(0);
+  }, [m.person.id]);
+  useEffect(() => {
     if (!running) return;
-    const receive = () => { tick += 1; setSequence(tick); setPacket(suitPacket(base.current, tick)); };
+    const receive = () => { tick.current += 1; setSequence(tick.current); setPacket(suitPacket(base.current, tick.current)); };
     receive(); const timer = setInterval(receive, 2000);
     return () => clearInterval(timer);
   }, [m.person.id, running]);
