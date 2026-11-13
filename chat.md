@@ -21,10 +21,12 @@
 - Current state: Lovable Cloud connected; core NABD demonstration built with 16 content pages. The first screen is the usable health overview rather than a cinematic landing page.
 
 ## Requested changes
+- 2026-11-13: User reported TS2322 at src/App.tsx(10,11), claiming `() => void` is incompatible with `MouseEventHandler<HTMLButtonElement>`. Uploaded New_Text_Document.txt is a visual-only UI overhaul brief, not the failing App.tsx source; the error investigation does not authorize applying that broader overhaul.
 - 2026-11-13: User reported TS2322 (`string | null` not assignable to `string`) at src/lib/utils.ts(2,21).
 - Uploaded New_Text_Document_7.txt requests a complete NABD astronaut health decision-support app across eight phases. Scope resolved: user selected “Build NABD.”
 
 ## Bugs / errors to fix
+- 2026-11-13: The reported App.tsx error cannot be reproduced from this project: src/App.tsx does not exist in its TanStack route structure. ButtonProps inherits React.ButtonHTMLAttributes; installed React types accept callbacks that ignore the event argument. Existing routing and mission-context tests pass (2/2). No application code changed; the actual failing source and complete diagnostic are needed before a targeted fix can be made.
 - 2026-11-13: Fixed live-patch “Mission provider is required” crash by retaining React context identity across module reloads without globally storing mission values. New module-reload regression passes; browser verified Leo/Mars selection survives page navigation and reload with no runtime errors. Nine tests pass; automatic build OK. Modified mission-context.tsx, added mission-state.ts and regression test, updated AGENTS.md, roadmap.md, and chat.md. The original already-open patched browser was not available; verification used a fresh local browser plus simulated module reload.
 - Reported TS2322 could not be reproduced from the current utility: line 2 is an import, both installed utility dependencies declare string return values, and a runtime check confirmed cn(null, undefined, "p-2", "p-4") returns "p-4". No available build-error log contained this error. No utility changes made without a matching failure.
 
@@ -52,6 +54,7 @@
 |------|---------|
 | (none uploaded yet) | |
 | New_Text_Document_7.txt | Full NABD specification: mission dashboard, health rules, check-in, trends, training, mental health, nutrition, educational library, delayed messaging, AI assistance, scenarios, rewards, reports, PWA and demo tour. |
+| New_Text_Document.txt | Visual-only product UI/UX overhaul brief; contains no App.tsx code or reported handler. Reviewed, not implemented during this error investigation. |
 
 ## Next step
 - Continue completing the outstanding full-spec features in roadmap.md; do not describe this core version as all eight phases complete.
