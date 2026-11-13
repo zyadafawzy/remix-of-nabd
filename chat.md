@@ -14,31 +14,37 @@
 - Verify changes where possible; state clearly if something could not be verified.
 
 ## Project purpose / overview
-- Not yet provided. (Awaiting user's project files.)
+- NABD (نبض): astronaut health decision support for NASA Space Apps 2026; six synthetic crew members across station, Mars transit, and lunar environments. English-only, cautious non-diagnostic language, code/SVG-only visuals.
 
 ## Current state (confirmed)
-- Fresh template: TanStack Start + React + Tailwind v4. Home page is still the blank placeholder.
-- No backend connected. No features built yet.
+- Previous state (superseded 2026-11-13): fresh blank TanStack template, no backend.
+- Current state: Lovable Cloud connected; core NABD demonstration built with 16 content pages. The first screen is the usable health overview rather than a cinematic landing page.
 
 ## Requested changes
 - 2026-11-13: User reported TS2322 (`string | null` not assignable to `string`) at src/lib/utils.ts(2,21).
-- Uploaded New_Text_Document_7.txt requests a complete NABD astronaut health decision-support app across eight phases; its instructions say to prioritize feature development rather than an error report. This conflicts with the accompanying request to resolve TS2322; scope clarification pending.
+- Uploaded New_Text_Document_7.txt requests a complete NABD astronaut health decision-support app across eight phases. Scope resolved: user selected “Build NABD.”
 
 ## Bugs / errors to fix
 - Reported TS2322 could not be reproduced from the current utility: line 2 is an import, both installed utility dependencies declare string return values, and a runtime check confirmed cn(null, undefined, "p-2", "p-4") returns "p-4". No available build-error log contained this error. No utility changes made without a matching failure.
 
 ## Tasks
 - Completed: created chat.md.
-- In progress: none.
-- Pending: read the user's project files once uploaded and fill in this document.
+- Superseded: awaiting uploaded project files; the full specification has now been read.
 - Completed: read New_Text_Document_7.txt in full and investigated the reported utility error.
-- Pending: clarify whether to address the reported error or begin the uploaded full-app specification.
+- Completed: scope clarification, Cloud connection, mission dashboard/body drawer, crew switching, three modes, core rules/tests, saved check-in, trends, alerts/action tasks, training, mind, nutrition, learning, sources, delayed console, AI Medic, scenario controls, PDF/CSV, preferences and guided page tour.
+- Verified: every content page renders, Heart opens on click, 75 bpm check-in saved in Cloud and read back after reload, 375px has no horizontal overflow, PDF downloads, actual AI Medic request answered from supplied sleep data, 8 tests pass, automatic build OK.
+- Remaining scope and limitations are listed explicitly in README.md and roadmap.md. The full eight-phase specification is not complete.
 
 ## Must NOT change / remove / implement
-- None specified yet.
+- Do not diagnose or present demo ranges as clinical protocols; do not collect real health information under public demo policies.
+- Do not generate images: the upload’s opening strict code-only visual instruction supersedes its later Asset Studio section.
 
 ## Decisions & requirements
-- None yet.
+- Preserve TanStack routing and server functions required by the project; Cloud was not already connected despite the upload’s assumption and has now been enabled.
+- Assumptions: synthetic public demonstration, fixed illustrative 2,400 kcal energy target, usable overview at /, SVG-only body, manually recorded pulse or explicitly labelled simulation.
+- File changes: src/components/nabd/*, src/lib/{demo,healthRules,hazards,missionModes,knowledge,medic.functions,pwa}.ts/tsx, all NABD routes, root/styles/Vite configuration, PWA icon/manifest, generated AI types, Cloud migration, tests, README.md, AGENTS.md, roadmap.md, and this file. Existing src/lib/utils.ts remains unchanged.
+- Bugs fixed during build: nullable crew/article defaults, body bone path intercepting Heart clicks, and excessive numeric precision overflowing telemetry cards.
+- Unverified: production PWA offline installation, physical camera capture, cross-device realtime, source URLs. Camera pulse estimation and photo AI are unavailable and clearly labelled.
 
 ## Referenced files
 | File | Purpose |
@@ -47,4 +53,4 @@
 | New_Text_Document_7.txt | Full NABD specification: mission dashboard, health rules, check-in, trends, training, mental health, nutrition, educational library, delayed messaging, AI assistance, scenarios, rewards, reports, PWA and demo tour. |
 
 ## Next step
-- Confirm requested scope; for error repair, obtain the failing code or fresh diagnostic because the current src/lib/utils.ts does not match the reported assignment error.
+- Continue completing the outstanding full-spec features in roadmap.md; do not describe this core version as all eight phases complete.
