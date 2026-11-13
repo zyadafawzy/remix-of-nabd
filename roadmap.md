@@ -1,4 +1,5 @@
 # NABD implementation roadmap
+- [ ] Latest request3420.txt: simulated in-suit sensor/PCB workflow without manual vital entry, interactive 3D body, simpler astronaut controls, shared SVG logo and stronger documentation; verify synthetic capture/save/readback and narrow/mobile layouts. Reported sidebarOpen error names an absent src/main.tsx and symbol; do not claim it fixed.
 - [x] Scope resolved: build New_Text_Document-4.txt; latest missing-children error investigation superseded.
 - [ ] Latest attachment message9737.txt requests all waves without stopping; continue the approved specification and verify each delivered feature. Reported src/main.tsx is absent; attachment contains no failing source.
 - [ ] Wave 1: design tokens, themes, shared console shell, status clocks, command palette/shortcuts, basic search/notifications, F001–F150 registry and reusable controls.

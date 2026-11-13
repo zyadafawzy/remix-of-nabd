@@ -1,0 +1,3 @@
+export function Logo({className = ''}:{className?:string}) {
+  return <svg viewBox="0 0 48 48" width="36" height="36" fill="none" className={`text-primary shrink-0 ${className}`} aria-hidden="true"><path d="M24 3 42 13v22L24 45 6 35V13Z" stroke="currentColor" strokeWidth="2"/><path d="M12 25h7l3-9 5 17 4-8h5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M24 7v4M24 37v4" stroke="currentColor" strokeWidth="2"/></svg>;
+}
