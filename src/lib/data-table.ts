@@ -2,7 +2,7 @@ export type TableRow = Record<string, string | number>;
 export function queryRows<T extends TableRow>(rows: T[], query: string, key: keyof T | null, descending: boolean): T[] {
   const filtered = rows.filter(row => Object.values(row).some(v => String(v).toLowerCase().includes(query.trim().toLowerCase())));
   if (!key) return filtered;
-  return filtered.toSorted((a, b) => {
+  return filtered.sort((a, b) => {
     const x = a[key], y = b[key];
     const delta = typeof x === 'number' && typeof y === 'number' ? x - y : String(x).localeCompare(String(y), undefined, { numeric: true });
     return descending ? -delta : delta;
