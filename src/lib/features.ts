@@ -604,3 +604,10 @@ export const featureDefinitions = [
 export type FeatureId = typeof featureDefinitions[number]["id"];
 export const featureFlags: Record<FeatureId, boolean> = Object.fromEntries(featureDefinitions.map(f => [f.id, true])) as Record<FeatureId, boolean>;
 export function isFeatureEnabled(id: FeatureId, overrides: Partial<Record<FeatureId, boolean>> = {}) { return overrides[id] ?? featureFlags[id]; }
+export function parseFeatureOverrides(value: unknown): Partial<Record<FeatureId, boolean>> {
+  if (!value || typeof value !== 'object') return {};
+  const entries = value as Record<string, unknown>;
+  const result: Partial<Record<FeatureId, boolean>> = {};
+  for (const f of featureDefinitions) if (typeof entries[f.id] === 'boolean') result[f.id] = entries[f.id] as boolean;
+  return result;
+}
