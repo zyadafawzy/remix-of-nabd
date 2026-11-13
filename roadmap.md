@@ -1,5 +1,15 @@
 # NABD implementation roadmap
-- [ ] Clarify whether the latest request is the missing-children fix or the attachment's ten-wave, 150-feature rebuild; fixing the reported error also requires the absent App.tsx source.
+- [x] Scope resolved: build New_Text_Document-4.txt; latest missing-children error investigation superseded.
+- [ ] Wave 1: design tokens, themes, shared console shell, status clocks, command palette/shortcuts, basic search/notifications, F001–F150 registry and reusable controls.
+- [ ] Wave 2: public website, docs, changelog, status, press, judges shell, F129.
+- [ ] Wave 3: role homes, customizable dashboard, system detail pages, anatomy upgrades (F004, F142, F046–F055).
+- [ ] Wave 4: measurement hub and sensing/logging features (F011–F030, F043).
+- [ ] Wave 5: analytics, forecasts, risk, explanations and model cards (F031–F045).
+- [ ] Wave 6: onboarding and mission operations (F001–F010, F056–F070).
+- [ ] Wave 7: care and telemedicine (F071–F082).
+- [ ] Wave 8: training, nutrition and sleep (F083–F097).
+- [ ] Wave 9: mind, crew, habitat and radiation (F098–F120); generated imagery excluded.
+- [ ] Wave 10: engagement, collaboration, private consent/auth, data tools, admin, offline and final quality gates (F121–F128, F130, F132–F140, F143, F146–F150).
 - [ ] Resolve reported src/lib/utils.ts numeric assignment error; blocked on actual failing source because current line 2 is an import and cn(42) returns a string.
 - [ ] Resolve reported src/pages/Index.tsx number-to-string error; blocked on the failing call and receiving function declaration because that page is absent from this project.
 - [ ] Resolve reported src/App.tsx button typing error; blocked on the actual failing file and full diagnostic because this project has no src/App.tsx.
