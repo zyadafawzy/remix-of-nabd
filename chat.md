@@ -21,15 +21,18 @@
 - No backend connected. No features built yet.
 
 ## Requested changes
-- None yet.
+- 2026-11-13: User reported TS2322 (`string | null` not assignable to `string`) at src/lib/utils.ts(2,21).
+- Uploaded New_Text_Document_7.txt requests a complete NABD astronaut health decision-support app across eight phases; its instructions say to prioritize feature development rather than an error report. This conflicts with the accompanying request to resolve TS2322; scope clarification pending.
 
 ## Bugs / errors to fix
-- None reported yet.
+- Reported TS2322 could not be reproduced from the current utility: line 2 is an import, both installed utility dependencies declare string return values, and a runtime check confirmed cn(null, undefined, "p-2", "p-4") returns "p-4". No available build-error log contained this error. No utility changes made without a matching failure.
 
 ## Tasks
 - Completed: created chat.md.
 - In progress: none.
 - Pending: read the user's project files once uploaded and fill in this document.
+- Completed: read New_Text_Document_7.txt in full and investigated the reported utility error.
+- Pending: clarify whether to address the reported error or begin the uploaded full-app specification.
 
 ## Must NOT change / remove / implement
 - None specified yet.
@@ -41,6 +44,7 @@
 | File | Purpose |
 |------|---------|
 | (none uploaded yet) | |
+| New_Text_Document_7.txt | Full NABD specification: mission dashboard, health rules, check-in, trends, training, mental health, nutrition, educational library, delayed messaging, AI assistance, scenarios, rewards, reports, PWA and demo tour. |
 
 ## Next step
-- User uploads project text files → read all, summarize here, then act.
+- Confirm requested scope; for error repair, obtain the failing code or fresh diagnostic because the current src/lib/utils.ts does not match the reported assignment error.
