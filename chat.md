@@ -17,6 +17,7 @@
 - NABD (نبض): astronaut health decision support for NASA Space Apps 2026; six synthetic crew members across station, Mars transit, and lunar environments. English-only, cautious non-diagnostic language, code/SVG-only visuals.
 
 ## Current state (confirmed)
+- 2026-11-13: New specification foundation checkpoint implemented, not all ten waves: grouped/collapsible rail, five mobile tabs and More sheet, search across existing pages/crew/science/alerts/tasks, keyboard commands, basic notification review/quiet mode, emergency guidance, synthetic mission clocks and global SIMULATED status, persisted dark/Daylight/High Contrast appearance controls, complete F001–F150 registry. No new database/auth changes; registry is not an admin authorization system. Modified shell.tsx, features.tsx, styles.css, dialog.tsx, AGENTS.md; added console-tools.tsx, theme-studio.tsx, console-preferences.ts, console-clock.ts, lib/features.ts and console-foundation.test.ts. Fixed strict index-signature access and mobile sheet translation found during verification. 13 tests pass; browser verified theme persistence, crew search, navigation collapse, emergency guidance and mobile More navigation; no runtime errors or overflow at 1440/1024/768/375px; automatic build OK. chat.md and roadmap.md updated. Remaining: full Wave 1 component library and flag wiring, then Waves 2–10. Urgent report transmission not exercised; existing mission data policies remain public synthetic-demo-only.
 - Previous state (superseded 2026-11-13): fresh blank TanStack template, no backend.
 - Current state: Lovable Cloud connected; core NABD demonstration built with 16 content pages. The first screen is the usable health overview rather than a cinematic landing page.
 
@@ -64,4 +65,5 @@
 | New_Text_Document-4.txt | Full-company rebuild specification with 150 features and ten waves; explicitly asks for feature development rather than error fixing, but contains no failing App.tsx source. Scope clarification pending. |
 
 ## Next step
+- Resume the new specification at Wave 1 reusable component library and flag wiring; do not claim Wave 1 or all 150 features complete from this foundation checkpoint.
 - Continue completing the outstanding full-spec features in roadmap.md; do not describe this core version as all eight phases complete.

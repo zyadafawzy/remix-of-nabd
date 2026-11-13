@@ -1,6 +1,8 @@
 # NABD implementation roadmap
 - [x] Scope resolved: build New_Text_Document-4.txt; latest missing-children error investigation superseded.
 - [ ] Wave 1: design tokens, themes, shared console shell, status clocks, command palette/shortcuts, basic search/notifications, F001–F150 registry and reusable controls.
+  - [x] Foundation checkpoint: grouped collapsible rail, five mobile tabs with working More sheet, emergency guidance, live illustrative MET/UTC/sol, simulation status, F145 appearance settings, F144 search/keyboard commands, basic F141 and F131, and all 150 registry IDs. Verified 1440/1024/768/375px without overflow; 13 tests pass, no browser runtime errors, automatic build OK.
+  - [ ] Finish the full reusable control library and flag-driven availability before declaring Wave 1 complete. Resume here; Waves 2–10 are not implemented.
 - [ ] Wave 2: public website, docs, changelog, status, press, judges shell, F129.
 - [ ] Wave 3: role homes, customizable dashboard, system detail pages, anatomy upgrades (F004, F142, F046–F055).
 - [ ] Wave 4: measurement hub and sensing/logging features (F011–F030, F043).
