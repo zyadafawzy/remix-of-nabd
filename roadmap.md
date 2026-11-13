@@ -1,5 +1,5 @@
 # NABD implementation roadmap
-- [ ] request6896.txt: remove rejected 3D entirely, improve 2D anatomical map and device diagram, research primary scientific sources and improve evidence-grounded AI Medic. Investigate TS2769 without fabricating a utility fix.
+- [x] request6896.txt: removed 3D module and four dependencies, improved interactive 2D anatomy and sensor-processing-review diagram, added curated primary NASA/CSA evidence and structured AI Medic with uncertainty, citation allowlist, action creation, crew-scoped conversation validation and offline guidance. Verified real AI response, drawers/layers/channels, evidence links and 801/375px layouts; 22 tests pass, automatic build OK, no page errors. TS2769 not reproduced; utils line 2 is an import and current cn works, unchanged.
 - [x] Latest request3420.txt: automatic synthetic in-suit sensor/PCB workflow replaces manual vital entry; interactive 3D scan with SVG fallback/system buttons, shared code-only SVG logo/favicon and stronger README documentation. Verified capture/Cloud insert/reload (66 bpm), mouse rotation, Heart drawer, and narrow/mobile layouts. 19 tests pass, no page errors, automatic build OK. Actual hardware and validated all-metric sensing are not implemented. Reported sidebarOpen error names an absent src/main.tsx and symbol; not reproducible, not claimed fixed.
 - [x] Scope resolved: build New_Text_Document-4.txt; latest missing-children error investigation superseded.
 - [ ] Latest attachment message9737.txt requests all waves without stopping; continue the approved specification and verify each delivered feature. Reported src/main.tsx is absent; attachment contains no failing source.
@@ -33,7 +33,7 @@
 - [x] README.md and chat.md updated with honest completion and limitations.
 
 ## Full-spec work still outstanding
-- Advanced public walkthrough; schematic 3D scan is delivered, /app retains the usable overview.
+- Advanced public walkthrough; 3D was rejected and removed, /app retains the improved 2D overview.
 - Complete rules/scoring, Mifflin-St Jeor estimate, all context-dependent zone mappings and daily trend semantics.
 - Validated rPPG, respiratory estimate, vision analysis, quick check-in, full field validation and reminders.
 - Advanced charts: crew overlays, correlations, PNG exports, event annotations and small multiples.

@@ -20,7 +20,7 @@ export function Medic(){
  const [conversation,setConversation]=useState<Message[]>([welcome]);const [question,setQuestion]=useState('');const [loading,setLoading]=useState(false);const [readAloud,setReadAloud]=useState(false);const [fallback,setFallback]=useState(false);const [evidenceOpen,setEvidenceOpen]=useState(false);
  const crewRef=useRef(m.person.id);const end=useRef<HTMLDivElement>(null);
  useEffect(()=>{crewRef.current=m.person.id;setConversation(restore(localStorage.getItem(`nabd-chat-${m.person.id}`)));setFallback(false);setQuestion('');window.speechSynthesis?.cancel();},[m.person.id]);
- useEffect(()=>{end.current?.scrollIntoView({block:'nearest'});},[conversation,loading]);
+ useEffect(()=>{const scroller=end.current?.parentElement;if(scroller&&conversation.length>1)scroller.scrollTop=scroller.scrollHeight;},[conversation,loading]);
  useEffect(()=>()=>window.speechSynthesis?.cancel(),[]);
  async function send(text:string){
   if(!text.trim()||loading)return;

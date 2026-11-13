@@ -3,7 +3,7 @@
 NABD is a synthetic astronaut-health decision-support demonstration inspired by NASA’s five spaceflight hazards. It is not a diagnostic medical device and is not suitable for real medical records or clinical use.
 
 ## Implemented core experience
-- Mission-control overview with a lazily loaded, rotatable 3D anatomical scan, accessible system buttons, SVG fallback, personal readings, crew selection, health score, tasks, and dose budget.
+- Mission-control overview with a 2D SVG anatomical diagram, Systems/Structure layers, accessible organ/system controls, personal readings, crew selection, health score, tasks and dose budget. The rejected 3D model and its dependencies are removed.
 - Three mission environments, six synthetic crew members, and 30-day histories.
 - Automatic synthetic suit-packet capture with six concept channels, interactive PCB diagram, review/save, Cloud persistence, and the existing offline measurement queue. This explicitly supersedes the manual-vital check-in wizard.
 - Trends, alerts and action tasks, training timer, breathing practice, local nutrition log, educational library, sources, and settings.
@@ -46,10 +46,24 @@ Latest checkpoint (13 Nov 2026): 19 tests pass; synthetic packet insert returns 
 Blood pressure, glucose, weight, mood/stress, nutrition and reaction values are retained from the prior synthetic record. Capture adds an explicit provenance note and sets `hr_source=simulated-suit`, `hr_confidence=0`; zero denotes no measurement confidence. The circuit board is an explanatory SVG, not fabrication-ready PCB/CAD. Before real deployment: validated hardware/protocols, calibration, signal quality, electrical and suit safety review, authenticated private storage, consent, and flight-surgeon approval are required.
 
 ## Body viewer and brand
-The anatomical scan is generated code, deliberately schematic rather than clinically accurate. A demand-rendered WebGL canvas loads only after hydration; CSS semantic colors update with the theme. System buttons remain keyboard-accessible; the SVG view works without WebGL. The shared hexagonal pulse logo is available at `/nabd-logo.svg`, used in navigation, the press download, favicon and install manifest. No bitmap or generated imagery is used.
+The 2D body diagram is code-generated SVG, deliberately schematic rather than clinically accurate. It includes organ contours, skeletal structure and callouts; Systems and Structure layers share the existing medical-system drawer and keyboard controls. No WebGL or 3D dependencies remain. The shared hexagonal pulse logo is available at `/nabd-logo.svg`, used in navigation, the press download, favicon and install manifest. No bitmap or generated imagery is used.
 
 ## Device checks still required
-Open `/app`, rotate the body and switch to the SVG view on your target phone and computer; hardware-GPU appearance, touch feel and frame rate cannot be established in the CPU-rendered sandbox. Open `/app/check-in` to pause/resume, capture and save a **synthetic** packet; this tests software only, never a physical sensor.
+Open `/app` to inspect body systems and switch layers. Open `/app/check-in` to inspect signal flow and capture/save a **synthetic** packet; this tests software only, never a physical sensor. Real hardware, published PWA behavior and audio output remain unverified.
+
+## Evidence-grounded AI Medic (13 Nov 2026)
+The curated browser-safe evidence registry (`src/lib/evidence.ts`) records each primary source's supported claim and limitations. NASA's HERA wearable evaluations emphasize quality, usability and comfort; CSA Bio-Monitor documents an actual garment/headband/tablet system, not Nabd capabilities. CSA Space Health research provides context for AI-assisted cardiovascular analysis, not diagnostic validation. NASA sleep and behavioral-health evidence supports cautious explanations, not Nabd thresholds.
+
+The unchanged AI model receives that registry, six recent conversation messages and seven synthetic records. Server-side structured output is validated by `medicBriefSchema`; source IDs are filtered through the registry, so no model-supplied URL is displayed. Answers separate observations, safe actions, escalation and uncertainty. Each action can be added to countermeasures. Conversations are validated on restoration, isolated per crew, copied/cleared locally and never automatically persisted to Cloud. Offline guidance remains available when inference fails. This is curated context, not live literature retrieval, diagnostic validation or guaranteed safety enforcement by an AI.
+
+Latest verification: 22 tests pass, automatic build OK, no browser page errors; no canvas renders. Systems/Structure, Heart drawer, device channel selection, a real AI answer recognizing zero measured confidence and retained demo metrics, source expansion, action creation and crew-chat reset were exercised. No horizontal overflow at 1280×1800, 801×407 or 375×812. The reported utils.ts overload is not reproduced: line 2 is an import and `cn(null, undefined, 'p-2', 'p-4')` returns `p-4`; the utility was not changed.
+
+Primary evidence reviewed during this change:
+- https://www.asc-csa.gc.ca/eng/sciences/bio-monitor.asp
+- https://ntrs.nasa.gov/citations/20190000238
+- https://www.asc-csa.gc.ca/eng/sciences/space-flight-improve-monitor-health-earth.asp
+- https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=100
+- https://humanresearchroadmap.nasa.gov/evidence/reports/HRP-ER-BMED-HFBP-20250210.pdf
 
 ## Science
 - https://www.nasa.gov/hrp/hazards/
