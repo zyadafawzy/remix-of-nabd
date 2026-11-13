@@ -43,3 +43,6 @@ use the editor.
 - Public content uses separate typed leaf routes and a shared editorial shell; preserve the operational console at /app and embed the same dashboard rather than duplicating demo state.
 - Public release and status pages distinguish planned work and simulated health from measured production claims; contact downloads remain local until an actual delivery destination is supplied.
 - Mission status clocks are explicitly illustrative and advance from a per-mounted-shell start; do not present their synthetic epoch as a real launch date.
+- Suit packet generation and capture stay in pure browser-safe functions; unsupported metrics retain explicit provenance so conceptual hardware is never mistaken for a validated device.
+- Lazy-load the anatomical WebGL viewer after hydration with semantic CSS colors and demand rendering, retaining the accessible SVG fallback and shared system drawer.
+- Reuse the shared SVG logo in navigation, downloads and favicon so brand assets cannot diverge.
