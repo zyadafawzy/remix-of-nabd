@@ -1,13 +1,10 @@
-import {createContext,useContext,useState,useEffect,useCallback,type ReactNode} from 'react';
+import {useContext,useState,useEffect,useCallback,type ReactNode} from 'react';
 import {supabase} from '@/integrations/supabase/client';
 import {crew,defaultCrew,defaultReading,demoHistory,type Crew} from '@/lib/demo';
 import {evaluate,type Reading} from '@/lib/healthRules';
 import {missionModes,type MissionMode} from '@/lib/missionModes';
 import {toast} from 'sonner';
-type Task={id:string;title:string;points:number;done:boolean;crew_id:string};
-type Message={id:string;crew_id:string;body:string;direction:string;deliver_at:string};
-type MissionState={person:Crew;setCrew:(id:string)=>void;mode:MissionMode;setMode:(mode:MissionMode)=>void;history:Reading[];reading:Reading;health:ReturnType<typeof evaluate>;tasks:Task[];toggleTask:(id:string)=>Promise<void>;addTask:(title:string)=>Promise<void>;saveReading:(m:Reading)=>Promise<void>;messages:Message[];sendMessage:(body:string,direction?:string)=>Promise<void>;online:boolean;synced:boolean;points:number;sound:boolean;setSound:(v:boolean)=>void;scenario:string|null;setScenario:(v:string|null)=>void;overlay:Reading|null;setOverlay:(v:Reading|null)=>void;crewHealth:(p:Crew)=>ReturnType<typeof evaluate>};
-const MissionContext=createContext<MissionState|null>(null);
+import { MissionContext, type Task, type Message } from './mission-state';
 export function MissionProvider({children}:{children:ReactNode}) {
  const [crewId,setCrew]=useState(defaultCrew.id);const [mode,setMode]=useState<MissionMode>('station');const [histories,setHistories]=useState<Record<string,Reading[]>>(()=>Object.fromEntries(crew.map(p=>[p.id,demoHistory(p)])));const [tasks,setTasks]=useState<Task[]>(()=>crew.flatMap(p=>['Complete daily health check-in','Resistive training · 60 minutes','Hydration · reach 8 cups'].map((title,i)=>({id:`${p.id}-${i}`,crew_id:p.id,title,points:i===0?50:i===1?30:20,done:false}))));const [messages,setMessages]=useState<Message[]>([]);const [online,setOnline]=useState(true);const [synced,setSynced]=useState(false);const [points,setPoints]=useState(740);const [sound,setSound]=useState(false);const [scenario,setScenario]=useState<string|null>(null);const [overlay,setOverlay]=useState<Reading|null>(null);
  const person=crew.find(p=>p.id===crewId)??defaultCrew;const history=histories[crewId]??demoHistory(person);const reading=overlay??history.at(-1)??defaultReading(person);const health=evaluate(reading,person,overlay?[...history,overlay]:history,mode);

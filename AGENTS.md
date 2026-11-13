@@ -31,6 +31,7 @@ use the editor.
 
 ## Application architecture
 - Keep TanStack file routing and shared mission state in a context provider; this preserves the template's SSR and typed navigation.
+- Retain only the mission React context identity across module reloads, never its value globally; live-preview consumers must stay connected to the mounted provider without leaking SSR crew state.
 - Keep health evaluation in pure browser-safe functions, separate from presentation and AI; safety explanations remain available offline and testable.
 - Cloud tables contain public synthetic demonstration data only; never enter real biometric or confidential data under public demo policies.
 - Use TanStack server functions for AI, never new Edge Functions, so credentials stay server-side.

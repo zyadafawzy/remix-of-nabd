@@ -25,6 +25,7 @@
 - Uploaded New_Text_Document_7.txt requests a complete NABD astronaut health decision-support app across eight phases. Scope resolved: user selected “Build NABD.”
 
 ## Bugs / errors to fix
+- 2026-11-13: Preview reported “Mission provider is required” after a live patch. Root provider exists; module-local createContext could be recreated while the existing provider remained mounted. Context identity is now retained across reloads without globally storing mission values; regression and browser verification in progress.
 - Reported TS2322 could not be reproduced from the current utility: line 2 is an import, both installed utility dependencies declare string return values, and a runtime check confirmed cn(null, undefined, "p-2", "p-4") returns "p-4". No available build-error log contained this error. No utility changes made without a matching failure.
 
 ## Tasks

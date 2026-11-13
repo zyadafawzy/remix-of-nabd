@@ -1,4 +1,5 @@
 # NABD implementation roadmap
+- [ ] Fix and verify mission context identity across live-preview updates.
 - [x] Core mission shell, dashboard, SVG body drawer, six crew and three mode selections.
 - [x] Core pure health rules, boundary tests, and synthetic 30-day records.
 - [x] Check-in with Cloud persistence, manual/simulated pulse, local photo preview, reaction test, and offline measurement queue.
