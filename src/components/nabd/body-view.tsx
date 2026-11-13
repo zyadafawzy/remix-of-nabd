@@ -3,18 +3,19 @@ import { RotateCcw, Box, ScanLine } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Body2D } from './body';
 import type { Level, Zone } from '@/lib/healthRules';
+import type { ScanColors } from './body-3d';
 const Body3D=lazy(()=>import('./body-3d'));
 class SceneBoundary extends Component<{children:ReactNode;fallback:ReactNode},{failed:boolean}> {
-  state={failed:false};
+  override state={failed:false};
   static getDerivedStateFromError(){return {failed:true};}
-  render(){return this.state.failed?this.props.fallback:this.props.children;}
+  override render(){return this.state.failed?this.props.fallback:this.props.children;}
 }
 export function Body({zones,onZone}:{zones:Record<Zone,Level>;onZone:(zone:Zone)=>void}) {
-  const [colors,setColors]=useState<Record<string,string>|null>(null);
+  const [colors,setColors]=useState<ScanColors|null>(null);
   const [flat,setFlat]=useState(false);const [reset,setReset]=useState(0);const [ready,setReady]=useState(false);
   const markReady=useCallback(()=>setReady(true),[]);
   useEffect(()=>{
-    const read=()=>{const css=getComputedStyle(document.documentElement);setColors(Object.fromEntries([['primary','--primary'],['green','--success'],['amber','--warning'],['red','--destructive']].map(([key,token])=>[key,css.getPropertyValue(token??'').trim()])));};
+    const read=()=>{const css=getComputedStyle(document.documentElement);const token=(name:string)=>css.getPropertyValue(name).trim();setColors({primary:token('--primary'),green:token('--success'),amber:token('--warning'),red:token('--destructive')});};
     read();const observer=new MutationObserver(read);observer.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme','data-accent']});return()=>observer.disconnect();
   },[]);
   const fallback=<Body2D zones={zones} onZone={onZone}/>;

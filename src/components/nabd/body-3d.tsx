@@ -3,7 +3,8 @@ import { Canvas } from '@react-three/fiber';
 import { Environment, Lightformer, OrbitControls } from '@react-three/drei';
 import { Vector2 } from 'three';
 import type { Level, Zone } from '@/lib/healthRules';
-type Props = { zones: Record<Zone,Level>; onZone:(zone:Zone)=>void; colors:Record<string,string> };
+export type ScanColors = {primary:string;green:string;amber:string;red:string};
+type Props = { zones: Record<Zone,Level>; onZone:(zone:Zone)=>void; colors:ScanColors };
 // Generated anatomical scan, not a realistic human model or clinical anatomy.
 function Scan({zones,onZone,colors}:Props) {
   const torso=useMemo(()=>[new Vector2(.29,0),new Vector2(.38,.22),new Vector2(.28,.5),new Vector2(.34,.83),new Vector2(.46,1.08),new Vector2(.42,1.23),new Vector2(.18,1.34)],[]);
