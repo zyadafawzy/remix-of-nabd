@@ -47,3 +47,4 @@ use the editor.
 - Keep the anatomical viewer entirely SVG with shared system drawers and keyboard controls; the rejected WebGL model and dependencies must not return implicitly.
 - AI Medic uses validated structured briefs and a curated evidence-ID allowlist with server-side prompts; generated citations never supply arbitrary URLs and offline guidance remains independent of inference.
 - Reuse the shared SVG logo in navigation, downloads and favicon so brand assets cannot diverge.
+- Daily science reuses the curated evidence registry with a browser-safe UTC-day rotation; editorial facts must not become generated medical claims.
